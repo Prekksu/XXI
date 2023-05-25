@@ -6,7 +6,7 @@ dotenv.config();
 const PORT = process.env.PORT;
 app.use(cors());
 app.use(express.json());
-// const db = require("./models");
+const db = require("./models");
 // const router = require("./routes");
 // db.sequelize.sync({ alter: true });
 
