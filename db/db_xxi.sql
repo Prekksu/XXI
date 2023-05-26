@@ -2,3 +2,4 @@ CREATE DATABASE db_xxi;
 USE db_xxi;
 SHOW TABLES;
 SELECT * FROM Users;
+DROP DATABASE db_xxi;
