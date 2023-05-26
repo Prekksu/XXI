@@ -35,6 +35,8 @@ fs.readdirSync(__dirname)
 			sequelize,
 			Sequelize.DataTypes
 		);
+		// console.log(model);
+
 		db[model.name] = model;
 	});
 
@@ -46,8 +48,43 @@ Object.keys(db).forEach((modelName) => {
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
-const user = require("./User");
-db.User = user(sequelize, Sequelize);
+db.Token = require("./Token")(sequelize, Sequelize);
+db.User = require("./User")(sequelize, Sequelize);
+
 db.Movie = require("./Movie")(sequelize, Sequelize);
+db.City = require("./City")(sequelize, Sequelize);
+db.Theater = require("./Theater")(sequelize, Sequelize);
+db.Schedule = require("./Schedule")(sequelize, Sequelize);
+db.Ticket = require("./Ticket")(sequelize, Sequelize);
+db.OrderItem = require("./OrderItem")(sequelize, Sequelize);
+db.Order = require("./Order")(sequelize, Sequelize);
+
+db.Theater.belongsTo(db.City, {
+	foreignKey: "cityId",
+});
+
+db.Schedule.belongsTo(db.City, {
+	foreignKey: "theaterId",
+});
+
+db.Schedule.belongsTo(db.Movie, {
+	foreignKey: "movieId",
+});
+
+db.Ticket.belongsTo(db.Schedule, {
+	foreignKey: "scheduleId",
+});
+
+db.OrderItem.belongsTo(db.Order, {
+	foreignKey: "orderId",
+});
+
+db.Ticket.hasOne(db.OrderItem, {
+	foreignKey: "tiketId",
+});
+
+db.Order.belongsTo(db.User, {
+	foreignKey: "userId",
+});
 
 module.exports = db;
