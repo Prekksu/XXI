@@ -37,10 +37,10 @@ const userController = {
 				where: {
 					[Op.or]: [
 						{
-							phoneNumber: phoneMail,
+							email: phoneMail,
 						},
 						{
-							email: phoneMail,
+							phoneNumber: phoneMail,
 						},
 					],
 				},
@@ -50,6 +50,7 @@ const userController = {
 					password,
 					user.dataValues.password
 				);
+				console.log(match);
 				if (match) {
 					const payload = {
 						id: user.dataValues.id,
