@@ -12,13 +12,14 @@ const url_image = process.env.URL_IMAGE;
 const userController = {
 	register: async (req, res) => {
 		try {
-			const { name, address, email, password } = req.body;
+			const { phoneNumber, name, email, address, password } = req.body;
 			const hashPassword = await bcrypt.hash(password, 10);
 
 			await db.User.create({
+				phoneNumber,
 				name,
-				address,
 				email,
+				address,
 				password: hashPassword,
 			});
 			return await db.User.findAll().then((result) => {
@@ -32,15 +33,15 @@ const userController = {
 	},
 	login: async (req, res) => {
 		try {
-			const { emna, password } = req.body;
+			const { phoneMail, password } = req.body;
 			const user = await db.User.findOne({
 				where: {
 					[Op.or]: [
 						{
-							email: emna,
+							phoneNumber: phoneMail,
 						},
 						{
-							name: emna,
+							email: phoneMail,
 						},
 					],
 				},

@@ -1,0 +1,56 @@
+{
+ "movies": [
+  {
+   "id": 1,
+   "img_url": "https://web3.21cineplex.com/movie-images/22LMX2.jpg",
+   "title": "The Little Mermaid",
+   "category": "Adventure, Family, Fantasy",
+   "duration": "135",
+   "synopsis": "Ariel (Halle Bailey) putri duyung yang merupakan anak dari Raja Triton (Javier Bardem), penguasa kerajaan bawah laut. Ariel yang penasaran dengan dunia manusia akhirnya jatuh cinta dengan pangeran Eric (Jonah Hauer-King). Keduanya bertemu saat Ariel menyelamatkan sang pangeran dari kapal yang tenggelam.",
+   "Producer": "John DeLuca, Rob Marshall, Lin-Manuel Miranda, Marc Platt",
+   "Director": "Rob Marshall",
+   "Writer": "David Magee",
+   "Cast": "Halle Bailey, Jonah Hauer-king, Melissa Mccarthy, Javier Bardem, Jude Akuwudike, Noma Dumezweni, Kajsa Mohammar, Lorena Andrea, Daveed Diggs, Jacob Tremblay, Awkwafina",
+   "Distributor": "Walt Disney Pictures"
+  },
+  {
+   "id": 2,
+   "img_url": "https://web3.21cineplex.com/movie-images/13HSUA.jpg",
+   "title": "Hati Suhita",
+   "category": "Drama",
+   "duration": "137",
+   "synopsis": "Kisah Alina Suhita. Perempuan teguh, matang dan pantang menyerah. Ketabahan memandunya menghadapi badai rumah tangga yang terjadi bahkan sejak malam pertama. Perjuangan lahir batinnya diuji untuk merengkuh cinta Gus Birru, suaminya sendiri.",
+   "Producer": "Chand Parwez Servia, Fiaz Servia",
+   "Director": "Archie Hekagery",
+   "Writer": "Alim Sudio",
+   "Cast": "Nadya Arina, Omar Daniel, Anggika Bolsterli, Ibrahim Risyad, Wafda Saifan, Desy Ratnasari, David Chalik, Devina Aureel, Widyawati, Slamet Rahardjo, Tanta Ginting",
+   "Distributor": "Starvision"
+  },
+  {
+   "id": 3,
+   "img_url": "https://web3.21cineplex.com/movie-images/23FAX3.jpg",
+   "title": "Fast X",
+   "category": "Action, Crime",
+   "duration": "141",
+   "synopsis": "Musuh dari masa lalu kini menghampiri Dom (Vin Diesel) dan keluarganya. Dante (Jason Momoa) putra gembong narkoba Hernan Reyes (Joaquim de Almeida) yang dihancurkan Dom dan kelompoknya di seri kelima kini datang dan berusaha balas dendam atas kematian sang ayah.",
+   "Producer": "Vin Diesel, Jeff Kirschenbaum, Justin Lin",
+   "Director": "Louis Leterrier",
+   "Writer": "Justin Lin, Dan Mazeau",
+   "Cast": "Vin Diesel, Michelle Rodriguez, Jordana Brewster, Tyrese Gibson, Sung Kang, Ludacris, Jason Momoa, John Cena, Jason Statham, Rita Moreno, Helen Mirren, Brie Larson, Charlize Theron",
+   "Distributor": "Universal Pictures"
+  },
+  {
+   "id": 4,
+   "img_url": "https://web3.21cineplex.com/movie-images/23EDRE.jpg",
+   "title": "Ride On",
+   "category": "Action, Comedy, Drama",
+   "duration": "126",
+   "synopsis": "Kisah tentang seorang pemeran pengganti dan kudanya yang menjadi sensasi media sosial saat pertarungan nyata mereka dengan penagih hutang menjadi viral.",
+   "Producer": "Li Jie, Belle Lau, Yanming Liu, Yuan Nong, Tianfu Xu",
+   "Director": "Larry Yang",
+   "Writer": "Larry Yang",
+   "Cast": "Jackie Chan, Liu Haocun, Kevin Guo, Joey Yung, Yu Ailei, Yu Rongguang, Lang Yueting, Andy On, Xiao Shenyang, Shi Yanneng.",
+   "Distributor": "Alibaba Pictures, China Film Co.ltd."
+  }
+ ]
+}
