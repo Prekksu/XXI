@@ -6,14 +6,50 @@ import {
 	InputGroup,
 	Stack,
 	InputLeftAddon,
-	InputRightAddon,
-	InputLeftElement,
 	Button,
 	Box,
 } from "@chakra-ui/react";
+import { Link, useNavigate } from "react-router-dom";
 import { FaLock, FaPhone } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { api } from "../api/api";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+
 export default function Login() {
+	const nav = useNavigate();
+	const dispatch = useDispatch();
+	const [account, setAccount] = useState({
+		phoneMail: "",
+		password: "",
+	});
+
+	async function onSubmit() {
+		try {
+			const response = await api.get("/Users/login", {
+				params: {
+					phoneMail: account.phoneMail,
+					password: account.password,
+				},
+			});
+			const status = response.data[0];
+			localStorage.setItem("user", JSON.stringify(status));
+
+			if (status) {
+				nav("/");
+			} else {
+				alert("Wrong number/password");
+			}
+		} catch (error) {
+			console.error(error);
+		}
+	}
+
+	async function inputHandler(event) {
+		const { value, id } = event.target;
+		const tempObj = { ...account };
+		tempObj[id] = value;
+		setAccount(tempObj);
+	}
 	return (
 		<>
 			<Center flexDir={"column"} w="100vw" maxW="420px" paddingTop="20px">
@@ -40,6 +76,9 @@ export default function Login() {
 							border="1px solid #ccc"
 							w="100vw"
 							maxW="355px"
+							id="phoneMail"
+							value={account.phoneMail}
+							onChange={inputHandler}
 						/>
 					</InputGroup>
 
@@ -54,11 +93,14 @@ export default function Login() {
 						</InputLeftAddon>
 						<Input
 							padding={"6px 12px"}
-							type="tel"
+							type="password"
 							placeholder="PIN/Password"
 							border="1px solid #ccc"
 							w="100vw"
 							maxW="355px"
+							id="password"
+							value={account.password}
+							onChange={inputHandler}
 						/>
 					</InputGroup>
 				</Stack>
@@ -83,6 +125,7 @@ export default function Login() {
 							border="1px solid #005350"
 							padding="6px 12px"
 							w="59px"
+							onSubmit={onSubmit}
 						>
 							Login
 						</Button>
